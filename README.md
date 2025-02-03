@@ -15,8 +15,8 @@ Esta documentação explica o processo de cálculo do **volume cúbico** e das *
 ### Componentes:
 - **`6000`**: Fator de conversão para transformar **peso cúbico** (em kg) em **volume cúbico** (em cm³).  
   *(Exemplo: 18,15 kg * 6000 = 108.900 cm³)*.
-- **`E10`**: Célula que contém a **relação final** (\( R \)), calculada como \( \frac{\text{Peso Cúbico}}{\text{Metragem Quadrada}} \).  
-  *(Exemplo: 18,15 kg / 300 m² = 0,0605)*.
+- **`E10`**: Célula que contém a **relação final** (\( R \)), calculada como `(Peso Cúbico) / (Metragem Quadrada)`.  
+  *(Exemplo: 18,15 kg / 300 m² = 0,0605)*.  
 - **`A5`**: Célula que contém a **metragem quadrada da tela** (\( S \)) em m².  
   *(Exemplo: 300 m²)*.
 
@@ -63,7 +63,7 @@ Volume = 6000 * R * S
    - `MROUND`: Arredonda o resultado para o **múltiplo de 5 mais próximo** (ex: 47,7 → 50).
 
 4. **`b; MROUND(volume / (a^2); 1)`**:
-   - Calcula a dimensão diferente (\( b \)) usando \( b = \frac{\text{Volume}}{a^2} \).
+   - Calcula a dimensão diferente ((b)) usando ( b = Volume / a² ).
    - `MROUND`: Arredonda para o **inteiro mais próximo** (ex: 36,2 → 36).
 
 5. **`a & " x " & b & " x " & a`**:
@@ -167,6 +167,3 @@ Este sistema permite calcular **dimensões de tela** de forma automática e din�
 - Cálculo de volume cúbico.  
 - Busca de dados em tabelas.  
 - Ajuste de dimensões com arredondamento inteligente.  
-
-Para personalizações, ajuste os parâmetros de arredondamento ou inclua inputs manuais! 😊
-``` 
